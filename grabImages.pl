@@ -14,7 +14,7 @@ my $filename = "";
 my $now = DateTime->now;
 my $start_of_last_year = DateTime->new( year => $now->year- 1);
 
-unless(mkdir $storeFolder) {
+unless(-e $storeFolder or mkdir $storeFolder) {
 		die "Unable to create $storeFolder\n";
 }
 
